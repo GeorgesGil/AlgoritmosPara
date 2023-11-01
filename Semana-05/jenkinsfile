@@ -1,0 +1,45 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout([
+                    $class: 'GitSCM', 
+                    branches: [[name: '*/main']], 
+                    doGenerateSubmoduleConfigurations: false, 
+                    extensions: [], 
+                    submoduleCfg: [], 
+                    userRemoteConfigs: [[
+                        url: 'https://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@github.com/GeorgesGil/AlgoritmosParalelos.git'
+                    ]]
+                ])
+          
+            }
+        }
+        stage('Plan') {
+            steps {
+                dir('../../go-app/terraform') {
+
+                    sh 'terraform plan'
+                }
+            }
+        }
+        stage('Apply') {
+            steps {
+                dir('../../go-app/terraform') {
+                    sh 'terraform apply -auto-approve'
+                }
+            }
+        }
+        stage('Destroy') {
+            steps {
+        
+                dir('../../go-app/terraform') {
+           
+                    sh 'terraform destroy -auto-approve'
+                }
+            }
+        }
+    }
+}
