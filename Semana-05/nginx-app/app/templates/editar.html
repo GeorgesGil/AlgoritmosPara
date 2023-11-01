@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualizar Producto</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #007bff;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Actualizar Producto</h1>
+        <form action="/actualizar" method="POST">
+            <input type="hidden" name="id" value="{{.id}}">
+            <div class="form-group">
+                <label for="nombre">Nombre del Producto</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" value="{{.nombre}}" required>
+            </div>
+            <div class="form-group">
+                <label for="cantidad">Cantidad</label>
+                <input type="number" class="form-control" id="cantidad" name="cantidad" value="{{.cantidad}}" required>
+            </div>
+            <div class="form-group">
+                <label for="precio">Precio</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">$</span>
+                    </div>
+                    <input type="number" class="form-control" id="precio" name="precio" value="{{.precio}}" required>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Actualizar Producto</button>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
