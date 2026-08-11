@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "infrastructure": {
+    "repository": "GeorgesGil/github-agent-automations",
+    "sha": "12879dc34a0826f6fe2633c3bc2b536711fd32b8"
+  },
+  "enrollment": {
+    "mode": "public-test-opt-in",
+    "source": "central-scanner"
+  },
+  "stack": {
+    "languages": [
+      "terraform"
+    ],
+    "frameworks": [],
+    "packageManager": null,
+    "runtime": null,
+    "monorepo": false,
+    "build": false,
+    "tests": false,
+    "lint": false,
+    "typecheck": false,
+    "coverage": false,
+    "databases": [],
+    "orms": [],
+    "docker": true,
+    "ci": false,
+    "infrastructure": [
+      "Semana-05/terraform/main.tf"
+    ]
+  }
+}
