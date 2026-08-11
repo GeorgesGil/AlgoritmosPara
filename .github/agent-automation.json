@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "infrastructure": {
     "repository": "GeorgesGil/github-agent-automations",
-    "sha": "12879dc34a0826f6fe2633c3bc2b536711fd32b8"
+    "sha": "c3f9bc154840fd144a6ff0185544523bddbf7d8f"
   },
   "enrollment": {
     "mode": "public-test-opt-in",
@@ -10,11 +10,12 @@
   },
   "stack": {
     "languages": [
+      "javascript/typescript",
       "terraform"
     ],
     "frameworks": [],
     "packageManager": null,
-    "runtime": null,
+    "runtime": "Node.js",
     "monorepo": false,
     "build": false,
     "tests": false,
@@ -24,7 +25,7 @@
     "databases": [],
     "orms": [],
     "docker": true,
-    "ci": false,
+    "ci": true,
     "infrastructure": [
       "Semana-05/terraform/main.tf"
     ]
